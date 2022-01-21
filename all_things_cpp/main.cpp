@@ -1,4 +1,5 @@
 #include <iostream>
+#include <typeinfo>
 #include <fstream>
 #include <vector>
 #include <array>
@@ -116,6 +117,14 @@ void vector_tests()
     print_vector(vec);
 
     vec.pop_back();
+    print_vector(vec);
+
+    std::vector<int>::iterator i;
+    i = vec.begin() + 2; // vec.end() to access last element
+    std::cout << *i << std::endl;
+    
+    vec.erase(i);
+    print_int(vec.size(), true);
     print_vector(vec);
 }
 
